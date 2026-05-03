@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number JS Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <style>
+    /* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* CONTAINER */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.header p {
+  color: #94a3b8;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* CARD */
+.card {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* CARD TITLE */
+.card h2 {
+  margin-bottom: 1rem;
+}
+
+/* LIST */
+.card ul {
+  list-style: none;
+}
+
+.card li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* COLORS */
+.green { border-left: 6px solid #22c55e; }
+.yellow { border-left: 6px solid #eab308; }
+.orange { border-left: 6px solid #f97316; }
+.blue { border-left: 6px solid #3b82f6; }
+.red { border-left: 6px solid #ef4444; }
+
+/* FULL WIDTH */
+.full {
+  grid-column: span 2;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: span 1;
+  }
+}
+  </style>
+
+  <main class="dashboard">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>🔢 Number JS Dashboard</h1>
+      <p>Guia rápido e visual</p>
+    </header>
+
+    <!-- GRID -->
+    <section class="grid">
+
+      <!-- BÁSICO -->
+      <article class="card green">
+        <h2>🟢 Básico</h2>
+        <ul>
+          <li><strong>typeof</strong> → typeof 10</li>
+          <li><strong>Number()</strong> → Number("10")</li>
+          <li><strong>parseInt()</strong> → parseInt("10.9")</li>
+          <li><strong>parseFloat()</strong> → parseFloat("10.9")</li>
+        </ul>
+      </article>
+
+      <!-- MÉTODOS -->
+      <article class="card yellow">
+        <h2>🟡 Métodos</h2>
+        <ul>
+          <li><strong>toFixed()</strong> → 10.456.toFixed(2)</li>
+          <li><strong>toPrecision()</strong> → 123.456.toPrecision(4)</li>
+          <li><strong>toString()</strong> → (10).toString()</li>
+          <li><strong>valueOf()</strong> → new Number(10)</li>
+        </ul>
+      </article>
+
+      <!-- VALIDAÇÃO -->
+      <article class="card orange">
+        <h2>🟠 Validação</h2>
+        <ul>
+          <li><strong>isNaN()</strong> → Number.isNaN(NaN)</li>
+          <li><strong>isInteger()</strong> → Number.isInteger(10)</li>
+          <li><strong>isFinite()</strong> → Number.isFinite(100)</li>
+          <li><strong>isSafeInteger()</strong> → Number.isSafeInteger(10)</li>
+        </ul>
+      </article>
+
+      <!-- MATH -->
+      <article class="card blue">
+        <h2>🔵 Math</h2>
+        <ul>
+          <li><strong>round()</strong> → Math.round(4.6)</li>
+          <li><strong>floor()</strong> → Math.floor(4.9)</li>
+          <li><strong>ceil()</strong> → Math.ceil(4.1)</li>
+          <li><strong>random()</strong> → Math.random()</li>
+          <li><strong>max()</strong> → Math.max(1,2,3)</li>
+          <li><strong>min()</strong> → Math.min(1,2,3)</li>
+        </ul>
+      </article>
+
+      <!-- AVANÇADO -->
+      <article class="card red full">
+        <h2>🔴 Avançado</h2>
+        <ul>
+          <li>Number.MAX_VALUE → Maior número</li>
+          <li>Number.MIN_VALUE → Menor positivo</li>
+          <li>Number.MAX_SAFE_INTEGER → Limite seguro</li>
+          <li>Number.MIN_SAFE_INTEGER → Limite seguro</li>
+          <li>BigInt → 123n</li>
+          <li>0.1 + 0.2 → Erro de precisão</li>
+        </ul>
+      </article>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

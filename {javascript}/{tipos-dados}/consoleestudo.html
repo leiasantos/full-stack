@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Console de Estudo - JavaScript Strings</title>
+
+<style>
+
+/* ===== Layout ===== */
+
+body{
+font-family: monospace;
+background:#0f172a;
+color:#e2e8f0;
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:40px;
+}
+
+h1{
+margin-bottom:20px;
+}
+
+/* ===== Console ===== */
+
+.console{
+width:800px;
+max-width:100%;
+background:#020617;
+border-radius:8px;
+padding:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+min-height:300px;
+overflow:auto;
+}
+
+/* linhas */
+
+.line{
+margin-bottom:10px;
+}
+
+.title{
+color:#38bdf8;
+font-weight:bold;
+}
+
+.desc{
+color:#94a3b8;
+}
+
+.result{
+color:#22c55e;
+}
+
+.code{
+color:#facc15;
+}
+
+/* ===== Botões ===== */
+
+.buttons{
+margin-top:20px;
+display:flex;
+gap:10px;
+}
+
+button{
+background:#2563eb;
+border:none;
+color:white;
+padding:10px 16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.clear{
+background:#ef4444;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Console de Estudo - Métodos de String</h1>
+
+<div class="console" id="console"></div>
+
+<div class="buttons">
+<button onclick="runExamples()">Executar exemplos</button>
+<button class="clear" onclick="clearConsole()">Limpar</button>
+</div>
+
+<script>
+
+const consoleBox = document.getElementById("console")
+
+function print(text, className="line"){
+const div = document.createElement("div")
+div.className = className
+div.innerHTML = text
+consoleBox.appendChild(div)
+}
+
+function clearConsole(){
+consoleBox.innerHTML=""
+}
+
+function runExamples(){
+
+clearConsole()
+
+let texto = " JavaScript é incrível "
+let fruta = "banana"
+
+/* 1 */
+print("<span class='title'>length</span>")
+print("<span class='desc'>Retorna o tamanho da string.</span>")
+print("<span class='code'>texto.length</span>")
+print("<span class='result'>Resultado: "+texto.length+"</span>")
+
+/* 2 */
+print("<br><span class='title'>toUpperCase()</span>")
+print("<span class='desc'>Converte texto para MAIÚSCULO.</span>")
+print("<span class='code'>texto.toUpperCase()</span>")
+print("<span class='result'>Resultado: "+texto.toUpperCase()+"</span>")
+
+/* 3 */
+print("<br><span class='title'>toLowerCase()</span>")
+print("<span class='desc'>Converte texto para minúsculo.</span>")
+print("<span class='code'>texto.toLowerCase()</span>")
+print("<span class='result'>Resultado: "+texto.toLowerCase()+"</span>")
+
+/* 4 */
+print("<br><span class='title'>trim()</span>")
+print("<span class='desc'>Remove espaços do início e final.</span>")
+print("<span class='code'>texto.trim()</span>")
+print("<span class='result'>Resultado: "+texto.trim()+"</span>")
+
+/* 5 */
+print("<br><span class='title'>includes()</span>")
+print("<span class='desc'>Verifica se a string contém um texto.</span>")
+print("<span class='code'>texto.includes('JavaScript')</span>")
+print("<span class='result'>Resultado: "+texto.includes("JavaScript")+"</span>")
+
+/* 6 */
+print("<br><span class='title'>slice()</span>")
+print("<span class='desc'>Extrai parte da string.</span>")
+print("<span class='code'>texto.slice(1,11)</span>")
+print("<span class='result'>Resultado: "+texto.slice(1,11)+"</span>")
+
+/* 7 */
+print("<br><span class='title'>replace()</span>")
+print("<span class='desc'>Substitui um texto.</span>")
+print("<span class='code'>texto.replace('JavaScript','JS')</span>")
+print("<span class='result'>Resultado: "+texto.replace("JavaScript","JS")+"</span>")
+
+/* 8 */
+print("<br><span class='title'>split()</span>")
+print("<span class='desc'>Divide string em array.</span>")
+print("<span class='code'>'maçã,banana,uva'.split(',')</span>")
+print("<span class='result'>Resultado: "+JSON.stringify("maçã,banana,uva".split(","))+"</span>")
+
+/* 9 */
+print("<br><span class='title'>repeat()</span>")
+print("<span class='desc'>Repete texto.</span>")
+print("<span class='code'>'ha'.repeat(3)</span>")
+print("<span class='result'>Resultado: "+"ha".repeat(3)+"</span>")
+
+/* 10 */
+print("<br><span class='title'>indexOf()</span>")
+print("<span class='desc'>Retorna a posição do texto.</span>")
+print("<span class='code'>texto.indexOf('Script')</span>")
+print("<span class='result'>Resultado: "+texto.indexOf("Script")+"</span>")
+
+}
+
+</script>
+
+</body>
+</html>
